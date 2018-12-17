@@ -48,7 +48,7 @@ function turn() {
   }
 
   direction = nextDirection; // Update the direction
-  oxo.animation.move(snake, direction, size); // Move the snake in the right direction
+  oxo.animation.move(snake, direction, size, true); // Move the snake in the right direction
   snakePosition = oxo.animation.getPosition(snake); // Update the snake position variable
 }
 

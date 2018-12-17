@@ -156,7 +156,6 @@ window.oxo = {
       var interval;
       var pressed = [];
       var pixels = speed > 100 ? Math.round(speed / 100) : 1;
-      console.log(pixels);
 
       document.addEventListener('keydown', function(event) {
         if (event.key.indexOf('Arrow') === 0) {

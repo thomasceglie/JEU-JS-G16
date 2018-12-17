@@ -129,13 +129,13 @@ var element = oxo.elements.createElement({
 
 ##### `onLeaveScreen`
 
-Detect the collision between an element and the border of the screen, and executes the given action.
+Detect the collision between an element and the border of the screen, and executes the given action. Set the third parameter to true if you need the element to be completly outside of the screen to trigger the action.
 
 ```
 var character = document.getElementById('character');
 oxo.elements.onLeaveScreen(character, function() {
   // Character is leaving the screen
-});
+}, true);
 ```
 
 ##### `onLeaveScreenOnce`
@@ -146,7 +146,7 @@ Same as `onLeaveScreen`, but the action will be executed only once. Better for p
 var character = document.getElementById('character');
 oxo.elements.onLeaveScreenOnce(character, function() {
   // Character is leaving the screen
-});
+}, true);
 ```
 
 ##### `onCollisionWithElement`

@@ -112,12 +112,13 @@ These function allow to create and observe elements.
 
 ##### `createElement`
 
-Create an element and insert it into the document. The function returns the created element.
+Create an element and insert it into the document. The function returns the created element. If the param obstacle is set to true, no elements will be allowed to move through it.
 
 ```
 var element = oxo.elements.createElement({
   type: 'div', // optional
   class: 'my-element' // optional,
+  obstacle: true, // optional,
   styles: { // optional
     transform: 'translate(50px, 50px)
   },

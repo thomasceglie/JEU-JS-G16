@@ -54,6 +54,8 @@ Clone and cd into the repository and run `npm install`
 
 Open `localhost:1234/index.html`
 
+Don't forget the `index.html` part !
+
 ### Production mode
 
 `npm run build`

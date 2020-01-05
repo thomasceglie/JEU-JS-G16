@@ -27,7 +27,7 @@ window.oxo = {
       var newPosition = oxo.animation.computeNewPosition(
         position,
         direction,
-        distance
+        distance,
       );
 
       var elPos = element.getBoundingClientRect();
@@ -55,7 +55,7 @@ window.oxo = {
               obstacle == element ||
               !oxo.elements.elementsAreColliding(
                 obstacle.getBoundingClientRect(),
-                elFuturePos
+                elFuturePos,
               )
             );
           })
@@ -109,7 +109,7 @@ window.oxo = {
           break;
         default:
           console.error(
-            'The direction provided (' + direction + ') is not valid'
+            'The direction provided (' + direction + ') is not valid',
           );
           return;
       }
@@ -124,11 +124,13 @@ window.oxo = {
      */
     getPosition(element) {
       var position = element.style.transform.match(
-        new RegExp(/translate\(.+\)/)
+        new RegExp(/translate\(.+\)/),
       );
 
       if (position) {
-        var values = position[0].match(/-?\d+/g).map(value => parseInt(value));
+        var values = position[0]
+          .match(/-?\d+/g)
+          .map((value) => parseInt(value));
         return {
           x: values[0],
           y: values[1],
@@ -177,7 +179,6 @@ window.oxo = {
       var interval;
       var pressed = [];
       var pixels = speed > 100 ? Math.round(speed / 100) : 1;
-      console.log(pixels);
 
       document.addEventListener('keydown', function(event) {
         if (event.key.indexOf('Arrow') === 0) {
@@ -194,7 +195,7 @@ window.oxo = {
                       element,
                       oxo.inputs.getDirectionFromPressedKeys(pressed),
                       pixels,
-                      false
+                      false,
                     );
                   }
                 });
@@ -208,7 +209,7 @@ window.oxo = {
         if (event.key.indexOf('Arrow') === 0) {
           var direction = event.key.replace('Arrow', '').toLowerCase();
 
-          pressed = pressed.filter(key => key !== direction);
+          pressed = pressed.filter((key) => key !== direction);
           if (!pressed.length) {
             clearInterval(interval);
             interval = null;
@@ -292,7 +293,7 @@ window.oxo = {
           root: null,
           rootMargin: '0px',
           threshold: completly ? 0 : 1,
-        }
+        },
       );
       observer.observe(element);
 
@@ -325,7 +326,7 @@ window.oxo = {
         if (
           oxo.elements.elementsAreColliding(
             element.getBoundingClientRect(),
-            target.getBoundingClientRect()
+            target.getBoundingClientRect(),
           )
         ) {
           if (!colliding) {

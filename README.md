@@ -12,37 +12,37 @@ This is a boilerplate repository using `OXO`, a minimalist game library to handl
 - [The `OXO` library](#the--oxo--library)
   - [Functions](#functions)
     - [Screens](#screens)
-      - [`loadScreen`](#-loadscreen-)
-      - [`getCurrentScreen`](#-getcurrentscreen-)
+      - [`loadScreen`](#-loadscreen)
+      - [`getCurrentScreen`](#-getcurrentscreen)
     - [Elements](#elements)
-      - [`createElement`](#-createelement-)
-      - [`onLeaveScreen`](#-onleavescreen-)
-      - [`onLeaveScreenOnce`](#-onleavescreenonce-)
-      - [`onCollisionWithElement`](#-oncollisionwithelement-)
-      - [`onCollisionWithElementOnce`](#-oncollisionwithelementonce-)
+      - [`createElement`](#-createelement)
+      - [`onLeaveScreen`](#-onleavescreen)
+      - [`onLeaveScreenOnce`](#-onleavescreenonce)
+      - [`onCollisionWithElement`](#-oncollisionwithelement)
+      - [`onCollisionWithElementOnce`](#-oncollisionwithelementonce)
     - [Animation](#animation)
-      - [`getPosition`](#-getposition-)
-      - [`setPosition`](#-setposition-)
-      - [`move`](#-move-)
-      - [`moveElementWithArrowKeys`](#-moveelementwitharrowkeys-)
+      - [`getPosition`](#-getposition)
+      - [`setPosition`](#-setposition)
+      - [`move`](#-move)
+      - [`moveElementWithArrowKeys`](#-moveelementwitharrowkeys)
     - [Player](#player)
-      - [`getScore`](#-getscore-)
-      - [`setScore`](#-setscore-)
-      - [`addToScore`](#-addtoscore-)
-      - [`removeFromScore`](#-removefromscore-)
+      - [`getScore`](#-getscore)
+      - [`setScore`](#-setscore)
+      - [`addToScore`](#-addtoscore)
+      - [`removeFromScore`](#-removefromscore)
     - [Inputs](#inputs)
-      - [`listenKey`](#-listenkey-)
-      - [`listenKeys`](#-listenkeys-)
-      - [`listenArrowKeys`](#-listenarrowkeys-)
-      - [`listenKeyOnce`](#-listenkeyonce-)
-      - [`cancelKeyListener`](#-cancelkeylistener-)
-      - [`cancelKeysListeners`](#-cancelkeyslisteners-)
-      - [`cancelArrowKeysListeners`](#-cancelarrowkeyslisteners-)
+      - [`listenKey`](#-listenkey)
+      - [`listenKeys`](#-listenkeys)
+      - [`listenArrowKeys`](#-listenarrowkeys)
+      - [`listenKeyOnce`](#-listenkeyonce)
+      - [`cancelKeyListener`](#-cancelkeylistener)
+      - [`cancelKeysListeners`](#-cancelkeyslisteners)
+      - [`cancelArrowKeysListeners`](#-cancelarrowkeyslisteners)
     - [Utils](#utils)
-      - [`getRandomNumber`](#-getrandomnumber-)
+      - [`getRandomNumber`](#-getrandomnumber)
   - [Data attributes](#data-attributes)
-    - [`data-oxo-score`](#-data-oxo-score-)
-    - [`data-oxo-movable`](#-data-oxo-movable-)
+    - [`data-oxo-score`](#-data-oxo-score)
+    - [`data-oxo-movable`](#-data-oxo-movable)
 
 ## How to use
 
@@ -119,10 +119,10 @@ Create an element and insert it into the document. The function returns the crea
 ```
 var element = oxo.elements.createElement({
   type: 'div', // optional
-  class: 'my-element' // optional,
+  class: 'my-element', // optional,
   obstacle: true, // optional,
   styles: { // optional
-    transform: 'translate(50px, 50px)
+    transform: 'translate(50px, 50px)'
   },
   appendTo: 'body' // optional
 });
@@ -277,7 +277,7 @@ The keys that can be listened to are `enter`, `space`, `left`, `up`, `right`, `d
 Same as `listenKey`, but with several keys that can be pressed. The key that was pressed is available in the callback function.
 
 ```
-oxo.inputs.listenKeys(['up', 'down], function(key) {
+oxo.inputs.listenKeys(['up', 'down'], function(key) {
   console.log(key); // 'up' or 'down';
 });
 ```
